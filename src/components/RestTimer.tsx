@@ -38,7 +38,7 @@ export default function RestTimer({ endTime, onComplete }: RestTimerProps) {
 
   if (!endTime) {
     return (
-      <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-3 text-sm text-zinc-300">
+      <div className="soft-panel rounded-2xl p-3 text-sm text-zinc-300">
         Descanso: marca una serie para iniciar 3:00.
       </div>
     );
@@ -46,13 +46,13 @@ export default function RestTimer({ endTime, onComplete }: RestTimerProps) {
 
   return (
     <div
-      className={`rounded-xl border p-3 ${
+      className={`rounded-2xl border p-3 ${
         remainingSeconds === 0
-          ? "border-emerald-500 bg-emerald-500/15 text-emerald-200"
-          : "border-zinc-700 bg-zinc-900 text-zinc-100"
+          ? "border-emerald-400/80 bg-emerald-500/20 text-emerald-100 shadow-[0_0_0_1px_rgba(52,211,153,0.35)]"
+          : "soft-panel text-zinc-100"
       }`}
     >
-      <p className="text-xs uppercase tracking-wide text-zinc-400">Descanso</p>
+      <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Descanso</p>
       <p className="text-3xl font-bold tabular-nums">{formatSeconds(remainingSeconds)}</p>
       {remainingSeconds === 0 && <p className="text-sm font-medium">Listo para la próxima serie.</p>}
     </div>

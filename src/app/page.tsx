@@ -26,12 +26,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mx-auto flex w-full max-w-xl flex-1 flex-col px-4 py-5">
-      <header className="mb-5 space-y-3">
-        <h1 className="text-3xl font-bold text-white">Plan de Entrenamiento</h1>
-        <p className="text-sm text-zinc-300">
-          Upper/Lower 4 días. Reps {GLOBAL_SPECS.reps}, Intensidad{" "}
-          {GLOBAL_SPECS.intensity}, Descanso ≥ {GLOBAL_SPECS.restMinutes} min.
+    <main className="mx-auto flex w-full max-w-xl flex-1 flex-col px-4 py-6">
+      <header className="glass-card mb-5 rounded-3xl p-5">
+        <p className="text-xs uppercase tracking-[0.2em] text-indigo-200/80">Track diario</p>
+        <h1 className="mt-2 text-3xl font-bold text-zinc-50">Plan de Entrenamiento</h1>
+        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+          Upper/Lower 4 dias. Reps {GLOBAL_SPECS.reps}, Intensidad {GLOBAL_SPECS.intensity},
+          Descanso &gt;= {GLOBAL_SPECS.restMinutes} min.
         </p>
       </header>
 

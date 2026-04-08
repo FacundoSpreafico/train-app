@@ -17,7 +17,7 @@ export default function ActiveDayPage() {
         <p className="text-zinc-300">Elegí un día válido desde la pantalla principal.</p>
         <Link
           href="/"
-          className="min-h-12 rounded-xl border border-zinc-700 px-4 py-3 text-sm font-semibold text-zinc-100"
+          className="soft-panel min-h-12 rounded-xl px-4 py-3 text-sm font-semibold text-zinc-100"
         >
           Ir al inicio
         </Link>

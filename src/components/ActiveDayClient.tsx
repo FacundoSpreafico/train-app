@@ -97,15 +97,16 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
         <button
           type="button"
           onClick={goBack}
-          className="min-h-12 rounded-xl border border-zinc-700 px-4 text-sm font-semibold text-zinc-100"
+          className="soft-panel min-h-12 rounded-xl px-4 text-sm font-semibold text-zinc-100"
         >
           ← Volver
         </button>
-        <div>
-          <h1 className="text-2xl font-bold text-white">{day.title}</h1>
+        <div className="glass-card rounded-3xl p-4">
+          <p className="text-xs uppercase tracking-[0.18em] text-indigo-200/80">Sesion activa</p>
+          <h1 className="mt-1 text-2xl font-bold text-white">{day.title}</h1>
           <p className="text-sm text-zinc-300">{day.subtitle}</p>
         </div>
-        <div className="rounded-xl border border-zinc-700 bg-zinc-900 p-3 text-sm">
+        <div className="soft-panel rounded-2xl p-3 text-sm">
           <p className="text-zinc-300">
             Progreso: <span className="font-semibold text-white">{completedCount}</span> /{" "}
             {totalSets} series
@@ -129,10 +130,10 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
           const history = historyMap[exercise.historyKey] ?? [];
 
           return (
-            <article key={exercise.id} className="rounded-2xl border border-zinc-700 bg-zinc-900 p-4">
+            <article key={exercise.id} className="glass-card rounded-3xl p-4">
               <div className="space-y-1">
                 <h2 className="text-base font-semibold text-white">{exercise.name}</h2>
-                <p className="text-sm text-zinc-300">{exercise.series} series</p>
+                <p className="text-sm text-zinc-300">{exercise.series} series programadas</p>
               </div>
 
               <div className="mt-3 grid grid-cols-2 gap-2">
@@ -146,13 +147,17 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                       key={setNumber}
                       type="button"
                       onClick={() => toggleSet(exercise.id, setNumber)}
-                      className={`min-h-12 rounded-xl border px-3 text-sm font-semibold ${
-                        isDone
-                          ? "border-emerald-400 bg-emerald-500/20 text-emerald-200"
-                          : "border-zinc-600 bg-zinc-800 text-zinc-100"
+                      aria-pressed={isDone}
+                      className={`series-button min-h-14 rounded-2xl border px-3 text-left text-sm font-semibold ${
+                        isDone ? "series-button-done text-emerald-100" : "series-button-pending text-zinc-100"
                       }`}
                     >
-                      {isDone ? "✓ " : ""}Serie {setNumber}
+                      <span className="block text-[11px] uppercase tracking-[0.14em] text-zinc-300/85">
+                        Serie {setNumber}
+                      </span>
+                      <span className="mt-1 block text-base leading-none">
+                        {isDone ? "Completada" : "Marcar"}
+                      </span>
                     </button>
                   );
                 })}
@@ -169,7 +174,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                   onChange={(event) => updateWeight(exercise.id, event.target.value)}
                   onBlur={(event) => saveWeightHistory(exercise.historyKey, event.target.value)}
                   placeholder="Ej: 25 kg"
-                  className="min-h-12 w-full rounded-xl border border-zinc-600 bg-zinc-950 px-3 text-base text-zinc-100 placeholder:text-zinc-500"
+                  className="min-h-12 w-full rounded-xl border border-indigo-200/25 bg-zinc-950/90 px-3 text-base text-zinc-100 placeholder:text-zinc-500"
                 />
               </div>
 
@@ -178,7 +183,10 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                 {history.length > 0 ? (
                   <ul className="mt-2 space-y-1 text-sm text-zinc-300">
                     {history.slice(0, 3).map((entry) => (
-                      <li key={`${exercise.historyKey}-${entry.date}`} className="rounded-lg bg-zinc-800 px-2 py-1">
+                      <li
+                        key={`${exercise.historyKey}-${entry.date}`}
+                        className="rounded-lg border border-zinc-700 bg-zinc-800/80 px-2 py-1"
+                      >
                         {entry.date}: {entry.value}
                       </li>
                     ))}
@@ -194,7 +202,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
 
       <Link
         href="/"
-        className="min-h-12 rounded-xl border border-zinc-700 px-4 py-3 text-center text-sm font-semibold text-zinc-100"
+        className="soft-panel min-h-12 rounded-xl px-4 py-3 text-center text-sm font-semibold text-zinc-100"
       >
         Volver al listado
       </Link>
