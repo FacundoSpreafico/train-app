@@ -39,7 +39,7 @@ export default function RestTimer({ endTime, onComplete }: RestTimerProps) {
   if (!endTime) {
     return (
       <div className="soft-panel rounded-2xl p-3 text-sm text-zinc-300">
-        Descanso: marca una serie para iniciar 3:00.
+        El descanso empieza cuando marcas una serie. Duración: 3:00.
       </div>
     );
   }
@@ -52,9 +52,11 @@ export default function RestTimer({ endTime, onComplete }: RestTimerProps) {
           : "soft-panel text-zinc-100"
       }`}
     >
-      <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Descanso</p>
+      <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Descanso entre series</p>
       <p className="text-3xl font-bold tabular-nums">{formatSeconds(remainingSeconds)}</p>
-      {remainingSeconds === 0 && <p className="text-sm font-medium">Listo para la próxima serie.</p>}
+      {remainingSeconds === 0 && (
+        <p className="text-sm font-medium">Descanso terminado. Ya puedes iniciar la siguiente serie.</p>
+      )}
     </div>
   );
 }

@@ -14,12 +14,14 @@ export default function ActiveDayPage() {
     return (
       <main className="mx-auto flex w-full max-w-xl flex-1 flex-col items-center justify-center gap-4 px-4 text-center">
         <h1 className="text-2xl font-bold text-white">Día no encontrado</h1>
-        <p className="text-zinc-300">Elegí un día válido desde la pantalla principal.</p>
+        <p className="text-zinc-300">
+          Este día no existe o no está disponible. Vuelve al plan y elige uno de la lista.
+        </p>
         <Link
           href="/"
           className="soft-panel min-h-12 rounded-xl px-4 py-3 text-sm font-semibold text-zinc-100"
         >
-          Ir al inicio
+          Volver al plan
         </Link>
       </main>
     );

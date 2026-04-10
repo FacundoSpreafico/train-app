@@ -16,7 +16,7 @@ export default function DayCard({ day, completedToday }: DayCardProps) {
     >
       <div className="flex items-start justify-between gap-4">
         <div className="space-y-1">
-          <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Sesion</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Sesión</p>
           <h2 className="text-lg font-semibold leading-tight text-zinc-50 transition group-hover:text-white">
             {day.title}
           </h2>

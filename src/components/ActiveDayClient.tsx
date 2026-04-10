@@ -99,20 +99,20 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
           onClick={goBack}
           className="soft-panel min-h-12 rounded-xl px-4 text-sm font-semibold text-zinc-100"
         >
-          ← Volver
+          ← Volver al plan
         </button>
         <div className="glass-card rounded-3xl p-4">
-          <p className="text-xs uppercase tracking-[0.18em] text-indigo-200/80">Sesion activa</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-indigo-200/80">Sesión activa</p>
           <h1 className="mt-1 text-2xl font-bold text-white">{day.title}</h1>
           <p className="text-sm text-zinc-300">{day.subtitle}</p>
         </div>
         <div className="soft-panel rounded-2xl p-3 text-sm">
           <p className="text-zinc-300">
-            Progreso: <span className="font-semibold text-white">{completedCount}</span> /{" "}
-            {totalSets} series
+            Progreso: <span className="font-semibold text-white">{completedCount}</span> de{" "}
+            {totalSets} series completadas
           </p>
           {completeToday && (
-            <p className="mt-1 font-semibold text-emerald-300">Día completado hoy.</p>
+            <p className="mt-1 font-semibold text-emerald-300">¡Día completado hoy!</p>
           )}
         </div>
       </header>
@@ -121,7 +121,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
 
       {alert && (
         <div className="rounded-xl border border-emerald-500 bg-emerald-500/15 p-3 text-sm font-semibold text-emerald-200">
-          Descanso finalizado.
+          Descanso terminado. Puedes empezar la siguiente serie.
         </div>
       )}
 
@@ -156,7 +156,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                         Serie {setNumber}
                       </span>
                       <span className="mt-1 block text-base leading-none">
-                        {isDone ? "Completada" : "Marcar"}
+                        {isDone ? "Completada" : "Marcar como hecha"}
                       </span>
                     </button>
                   );
@@ -165,7 +165,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
 
               <div className="mt-4 space-y-2">
                 <label htmlFor={`${exercise.id}-weight`} className="block text-sm text-zinc-300">
-                  Peso usado
+                  Peso usado hoy
                 </label>
                 <input
                   id={`${exercise.id}-weight`}
@@ -173,13 +173,16 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                   value={progress.weights[exercise.id] ?? ""}
                   onChange={(event) => updateWeight(exercise.id, event.target.value)}
                   onBlur={(event) => saveWeightHistory(exercise.historyKey, event.target.value)}
-                  placeholder="Ej: 25 kg"
+                  placeholder="Ejemplo: 25 kg"
                   className="min-h-12 w-full rounded-xl border border-indigo-200/25 bg-zinc-950/90 px-3 text-base text-zinc-100 placeholder:text-zinc-500"
                 />
+                <p className="text-xs text-zinc-400">
+                  Se guarda automáticamente cuando sales de este campo.
+                </p>
               </div>
 
               <div className="mt-4">
-                <p className="text-sm font-medium text-zinc-200">Últimos 3 pesos</p>
+                <p className="text-sm font-medium text-zinc-200">Últimos 3 registros</p>
                 {history.length > 0 ? (
                   <ul className="mt-2 space-y-1 text-sm text-zinc-300">
                     {history.slice(0, 3).map((entry) => (
@@ -192,7 +195,9 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                     ))}
                   </ul>
                 ) : (
-                  <p className="mt-2 text-sm text-zinc-500">Sin registros todavía.</p>
+                  <p className="mt-2 text-sm text-zinc-500">
+                    Todavía no hay registros para este ejercicio.
+                  </p>
                 )}
               </div>
             </article>
@@ -204,7 +209,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
         href="/"
         className="soft-panel min-h-12 rounded-xl px-4 py-3 text-center text-sm font-semibold text-zinc-100"
       >
-        Volver al listado
+        Volver al plan
       </Link>
     </main>
   );
