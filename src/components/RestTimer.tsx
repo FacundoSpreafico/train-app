@@ -45,14 +45,14 @@ export default function RestTimer({ endTime, onComplete }: RestTimerProps) {
   }
 
   return (
-    <div
-      className={`rounded-2xl border p-3 ${
-        remainingSeconds === 0
-          ? "border-emerald-400/80 bg-emerald-500/20 text-emerald-100 shadow-[0_0_0_1px_rgba(52,211,153,0.35)]"
-          : "soft-panel text-zinc-100"
-      }`}
-    >
-      <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Descanso entre series</p>
+      <div
+        className={`rounded-2xl border p-3 ${
+          remainingSeconds === 0
+            ? "status-complete"
+            : "soft-panel text-zinc-100"
+        }`}
+      >
+      <p className="kicker text-xs uppercase tracking-[0.18em]">Descanso entre series</p>
       <p className="text-3xl font-bold tabular-nums">{formatSeconds(remainingSeconds)}</p>
       {remainingSeconds === 0 && (
         <p className="text-sm font-medium">Descanso terminado. Ya puedes iniciar la siguiente serie.</p>

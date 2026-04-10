@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="mx-auto flex w-full max-w-xl flex-1 flex-col px-4 py-6">
       <header className="glass-card mb-5 rounded-3xl p-5">
-        <p className="text-xs uppercase tracking-[0.2em] text-indigo-200/80">
+        <p className="kicker text-xs uppercase tracking-[0.2em]">
           Seguimiento diario
         </p>
         <h1 className="mt-2 text-3xl font-bold text-zinc-50">Plan de Entrenamiento</h1>

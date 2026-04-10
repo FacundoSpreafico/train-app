@@ -11,7 +11,7 @@ export const TRAINING_DAYS: TrainingDay[] = [
     id: "day-1",
     title: "Día 1 - Torso A",
     subtitle: "Enfoque Pectoral",
-    colorClass: "from-rose-500/20 to-rose-700/20 border-rose-500/40",
+    colorClass: "day-tone-upper",
     exercises: [
       {
         id: "d1-elevaciones-laterales",
@@ -67,7 +67,7 @@ export const TRAINING_DAYS: TrainingDay[] = [
     id: "day-2",
     title: "Día 2 - Pierna A",
     subtitle: "Enfoque Cuádriceps",
-    colorClass: "from-emerald-500/20 to-emerald-700/20 border-emerald-500/40",
+    colorClass: "day-tone-lower",
     exercises: [
       {
         id: "d2-patron-sentadilla",
@@ -111,7 +111,7 @@ export const TRAINING_DAYS: TrainingDay[] = [
     id: "day-3",
     title: "Día 3 - Descanso Activo",
     subtitle: "Recuperación",
-    colorClass: "from-sky-500/20 to-sky-700/20 border-sky-500/40",
+    colorClass: "day-tone-recovery",
     exercises: [
       {
         id: "d3-pasear",
@@ -131,7 +131,7 @@ export const TRAINING_DAYS: TrainingDay[] = [
     id: "day-4",
     title: "Día 4 - Torso B",
     subtitle: "Enfoque Espalda",
-    colorClass: "from-violet-500/20 to-violet-700/20 border-violet-500/40",
+    colorClass: "day-tone-upper",
     exercises: [
       {
         id: "d4-elevaciones-laterales",
@@ -187,7 +187,7 @@ export const TRAINING_DAYS: TrainingDay[] = [
     id: "day-5",
     title: "Día 5 - Pierna B",
     subtitle: "Enfoque Femoral",
-    colorClass: "from-amber-500/20 to-amber-700/20 border-amber-500/40",
+    colorClass: "day-tone-lower",
     exercises: [
       {
         id: "d5-bisagra-cadera",

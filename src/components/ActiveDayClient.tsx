@@ -102,7 +102,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
           ← Volver al plan
         </button>
         <div className="glass-card rounded-3xl p-4">
-          <p className="text-xs uppercase tracking-[0.18em] text-indigo-200/80">Sesión activa</p>
+          <p className="kicker text-xs uppercase tracking-[0.18em]">Sesión activa</p>
           <h1 className="mt-1 text-2xl font-bold text-white">{day.title}</h1>
           <p className="text-sm text-zinc-300">{day.subtitle}</p>
         </div>
@@ -174,7 +174,7 @@ export default function ActiveDayClient({ day }: ActiveDayClientProps) {
                   onChange={(event) => updateWeight(exercise.id, event.target.value)}
                   onBlur={(event) => saveWeightHistory(exercise.historyKey, event.target.value)}
                   placeholder="Ejemplo: 25 kg"
-                  className="min-h-12 w-full rounded-xl border border-indigo-200/25 bg-zinc-950/90 px-3 text-base text-zinc-100 placeholder:text-zinc-500"
+                  className="field-input min-h-12 w-full rounded-xl border px-3 text-base text-zinc-100 placeholder:text-zinc-500"
                 />
                 <p className="text-xs text-zinc-400">
                   Se guarda automáticamente cuando sales de este campo.
